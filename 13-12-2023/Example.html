@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sir exercise</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        {
+          name: "deepak",
+          age: 10,
+        },
+        {
+          name: "mohit",
+          age: 15,
+        },
+        {
+          name: "rakesh",
+          age: 20,
+        },
+      ];
+      let brr = arr.filter((ele, index, arr) => {
+        return ele.age % 2 == 0;
+      });
+      console.log(brr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Demo</title>
+</head>
+<body>
+    <script>
+        // function declaration
+        function show(){
+            console.log("I am traditioal way of fn. declaration");
+        }
+        // function expression
+        let display=function(){
+            console.log("i am fn. expression");
+        }
+        // Arrow function
+        let showArrow=()=>{
+            console.log("I am Arrow fn");
+        }
+        // default variable to a function
+        function add(a,b,c=20)
+        {
+            console.log("sum  is"+(a+b+c));
+        }
+        add(10,20);
+
+    </script>
+</body>
+</html>
