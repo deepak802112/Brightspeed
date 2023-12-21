@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>one way & two way data binding</title>
+    <style>
+      img {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        height: 450px;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl">
+      <!-- <h1>{{name}}</h1> -->
+      Name:<input type="text" ng-model="name" />
+      <p>{{name}}</p>
+      <img
+        ng-src="http://assets.labroots.com/_public/_files/system/content-articles/images/profile/1685_4096x4096.jpg"
+        ;
+      />
+      <h3 ng-init="text='deepak kumar'">{{text}}</h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script>
+      let app = angular.module("myApp", []);
+      app.controller("myCtrl", [
+        "$scope",
+        function ($s) {
+          $s.name = "deepak";
+          $s.img;
+        },
+      ]);
+    </script>
+  </body>
+</html>

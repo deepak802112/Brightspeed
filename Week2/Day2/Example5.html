@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+
+    <!-- CDN link for CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- user define css -->
+    <style>
+      .container {
+        background-color: darkturquoise;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="login()" class="btn btn-outline-success">log-in</button>
+    <button ng-click="register()" class="btn btn-outline-success">sign-up</button>
+
+    <div class="container" ng-show="toggle1">
+      <h1>Registration form</h1>
+      Name:<input
+        type="text"
+        ng-model="name"
+        placeholder="Enter your name"
+      /><br /><br />
+      Email:<input
+        type="text"
+        ng-model="email"
+        placeholder="Enter your email"
+      /><br /><br />
+      Password:<input
+        type="password"
+        ng-model="pass"
+        placeholder="Enter your password"
+      /><br /><br />
+      <button ng-click="submit()" class="btn btn-danger">submit</button>
+    </div>
+
+    <br /><br />
+
+    <!-- login-form -->
+
+    <div class="container" ng-show="toggle2">
+      <h1>Login Form</h1>
+      Email:<input
+        type="text"
+        placeholder="Enter your Emial"
+        ng-model="e"
+      /><br /><br />
+      Password:<input
+        type="password"
+        placeholder="Enter your password"
+        ng-model="p"
+      /><br /><br />
+      <button ng-click="submit2()" class="btn btn-danger">log-in</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", [
+        "$scope",
+        "$location",
+        function (s) {
+          s.toggle1 = false;
+          s.toggle2 = false;
+          s.login = function () {
+            s.toggle1 = true;
+            s.toggle2 = false;
+          };
+          s.register = function () {
+            s.toggle2 = true;
+            s.toggle1 = false;
+          };
+          s.submit = function () {
+            var obj = {};
+            obj.name = s.name;
+            obj.pass = s.pass;
+            obj.email = s.email;
+            console.log(obj);
+          };
+          s.submit2 = function () {
+            var obj2 = {};
+            obj2.userEmail = s.e;
+            obj2.userPass = s.p;
+            console.log(obj2);
+          };
+        },
+      ]);
+    </script>
+  </body>
+</html>
